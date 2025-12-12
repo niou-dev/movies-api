@@ -1,3 +1,4 @@
+using Movies.Api.Mapping;
 using Movies.Application;
 using Movies.Application.Database;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace Movies.Api
 
             app.UseAuthorization();
 
-
+            app.UseMiddleware<ValidationMappingMiddleware>();
             app.MapControllers();
 
             // db init
